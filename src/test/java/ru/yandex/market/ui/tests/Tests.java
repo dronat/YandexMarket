@@ -1,6 +1,7 @@
 package ru.yandex.market.ui.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ru.yandex.market.ui.pageObject.YandexMarketMainPage;
@@ -14,9 +15,10 @@ public class Tests {
     private final String URL = "https://market.yandex.ru/";
     private YandexMarketMainPage yandexMarketMainPage;
 
-    @BeforeTest
+    @BeforeMethod
     public void beforeTest() {
         open(URL);
+        yandexMarketMainPage = new YandexMarketMainPage();
     }
 
     @Test
@@ -36,8 +38,6 @@ public class Tests {
         String firstScrollBoxName = "Профилактика и лечение в сезон простуд";
         String SecondScrollBoxName = "Приглядитесь к этим предложениям";
         String ThirdScrollBoxName = "Популярные товары";
-
-        yandexMarketMainPage = new YandexMarketMainPage();
 
         yandexMarketMainPage.getScrollBox(firstScrollBoxName).shouldHave(text(firstScrollBoxName));
         yandexMarketMainPage.getScrollBox(SecondScrollBoxName).shouldHave(text(SecondScrollBoxName));
