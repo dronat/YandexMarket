@@ -11,7 +11,7 @@ public class YandexMarketBasePage {
     private String headerCategoriesButtonsSelector = "//div[@class = \"_381y5orjSo _21NjfY1k45\"]/div";
     private String logoYandexMarketSelector = "//div[@class = \"_7v6Uf-UYpr _2AL_nfH3zl\"]";
     private String searchFieldSelector = "//input[@id= \"header-search\"]";
-    private String seacrhButtonSelector = "//button[@class = \"_1XiEJDPVpk\"]";
+    private String searchButtonSelector = "//button[@class = \"_1XiEJDPVpk\"]";
     private String headerButtonsSelector = "//div[@class = \"JdoDRPz419\"]/div/div/..";
 
     public ElementsCollection getHeaderButtons() {
@@ -29,6 +29,6 @@ public class YandexMarketBasePage {
     }
 
     public SelenideElement getSearchButton() {
-        return $(By.xpath(seacrhButtonSelector));
+        return $(By.xpath(searchButtonSelector));
     }
 }
